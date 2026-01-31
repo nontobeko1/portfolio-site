@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Nontobeko Dube</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <header>
+    <div class="container">
+      <div class="nav-wrap">
+        <div class="logo">Nontobeko Dube</div>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="about.html" class="active">About</a>
+          <a href="projects.html">Projects</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO (SAME STYLE AS HOME) -->
+  <section class="hero-v2">
+    <div class="container">
+      <div class="hero-wrap">
+
+        <!-- Profile image -->
+        <div class="avatar-ring">
+          <img src="assets/images/profile.jpeg" alt="Profile photo">
+        </div>
+
+        <!-- Text content -->
+        <div>
+          <h1>Nontobeko Dube</h1>
+          <div class="role">Data Engineer</div>
+
+          <p class="summary">
+            I build reliable ETL pipelines and analytics-ready data models that help teams make better decisions.
+            My focus is on clean transformations, strong data quality rules, and scalable loading into SQL Server
+            and cloud platforms.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn-hero" href="projects.html">
+              View My Projects <span style="font-size:18px;">↓</span>
+            </a>
+
+            <a class="btn-ghost" href="https://github.com/nontobeko1" target="_blank" rel="noopener">
+              GitHub
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT CONTENT -->
+  <main class="container" style="padding: 55px 0;">
+    <section class="card" style="padding: 28px;">
+      <h2 style="margin-top:0;">About Me</h2>
+
+      <p>
+        I’m a data professional who enjoys turning messy, raw datasets into clean, trusted data that teams can use
+        for reporting and decision-making. I work across the full pipeline — extracting data, transforming it with
+        strong validation rules, and loading it into well-structured warehouse models like star schemas.
+      </p>
+
+      <p>
+        My recent work includes building an end-to-end <strong>Online Retail ETL Pipeline</strong> using Python
+        (Pandas + SQLAlchemy/pyodbc) and Microsoft SQL Server. The pipeline loads data into a staging layer, builds
+        dimensions, and refreshes a fact table designed for analytics and BI.
+      </p>
+
+      <p>
+        I’m comfortable working in cross-functional environments, documenting solutions clearly, and iterating fast
+        to fix issues. I’m actively growing my skills in cloud data engineering and modern data tooling.
+      </p>
+    </section>
+
+    <!-- SKILLS (OPTIONAL QUICK ADD) -->
+    <section class="card" style="padding: 28px; margin-top: 20px;">
+      <h2 style="margin-top:0;">Skills</h2>
+
+      <h3>Technical</h3>
+      <p>SQL • Python • Power BI • Microsoft Azure • AWS • Apache Spark • Airflow • Docker</p>
+
+      <h3>Interpersonal</h3>
+      <p>
+        Team collaboration • Cross-functional communication • Stakeholder management • Technical documentation •
+        Analytical & critical thinking • Adaptability • Initiative • Resilience • Troubleshooting & debugging •
+        Curiosity & continuous learning • Ownership & accountability • Task delegation • Decision making • Time management
+      </p>
+
+      <h3>Project Management</h3>
+      <p>Jira • Trello • Asana • Agile • Scrum • Waterfall</p>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="year"></span> Nontobeko Dube • Data Engineer</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
+
