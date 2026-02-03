@@ -33,9 +33,11 @@
         <h1>Nontobeko Dube</h1>
         <div class="role">Data Engineer</div>
 
+        <!-- UPDATED INTRO: data engineering + data analytics -->
         <p class="summary">
-          I build practical data solutions — ETL pipelines, clean data models, and analytics-ready outputs.
-          I’m also exploring AI + automation workflows that turn messy inputs into structured, actionable data.
+          I build practical data solutions — production-ready ETL pipelines, clean data models, and
+          analytics-ready datasets. I also deliver data analytics outputs that help teams understand performance,
+          trends, and opportunities through trusted metrics and reporting.
         </p>
 
         <div class="cta-row">
@@ -43,9 +45,11 @@
           <a class="btn-ghost" href="#contact">Contact Me</a>
         </div>
 
+        <!-- UPDATED META PILLS: strengths + tools -->
         <div class="hero-meta">
           <span class="meta-pill">Python • SQL • ETL</span>
-          <span class="meta-pill">Google APIs • Automation</span>
+          <span class="meta-pill">Data Analytics • KPI Reporting</span>
+          <span class="meta-pill">Airflow • Docker • Automation</span>
           <span class="meta-pill">Power BI • Data Modeling</span>
         </div>
       </div>
@@ -62,8 +66,8 @@
           and reporting-ready datasets. I enjoy translating business needs into clean, maintainable data solutions.
         </p>
         <p>
-          I’m currently strengthening my portfolio with practical projects that demonstrate real-world tools:
-          SQL Server, Python, automation, and AI-assisted workflow design.
+          I combine engineering fundamentals (reliable pipelines, testing, orchestration) with analytics thinking
+          (clean KPIs, consistent definitions, reporting-ready marts) so teams can confidently make decisions.
         </p>
 
         <div class="about-actions">
@@ -75,11 +79,11 @@
       <div class="about-stats">
         <div class="stat-card">
           <h3>Strengths</h3>
-          <p>ETL pipelines • Data modeling • API integration • Automation</p>
+          <p>ETL pipelines • Data analytics • Data modeling • Automation</p>
         </div>
         <div class="stat-card">
           <h3>Tools</h3>
-          <p>Python • SQL Server • Power BI • Git/GitHub</p>
+          <p>Python • SQL Server • DuckDB • Airflow • Docker • Power BI</p>
         </div>
         <div class="stat-card">
           <h3>Focus</h3>
@@ -94,8 +98,8 @@
     <div class="container">
       <h2>Projects</h2>
 
-      <div class="project-grid">
-        <article class="card project-card">
+              <!-- EXISTING PROJECT 1 -->
+        <article class="card project-card" data-category="data-engineering">
           <img src="assets/images/etl_architecture.png" alt="ETL architecture diagram" />
           <div class="project-body">
             <h3>Online Retail ETL → SQL Server Data Warehouse</h3>
@@ -113,7 +117,8 @@
           </div>
         </article>
 
-        <article class="card project-card">
+        <!-- EXISTING PROJECT 2 -->
+        <article class="card project-card" data-category="data-modeling">
           <img src="assets/images/star_schema.png" alt="Star schema diagram" />
           <div class="project-body">
             <h3>Star Schema Warehouse Model</h3>
@@ -129,8 +134,8 @@
           </div>
         </article>
 
-        <!-- NEW PROJECT CARD -->
-        <article class="card project-card">
+        <!-- EXISTING PROJECT 3 -->
+        <article class="card project-card" data-category="ai-automation">
           <img src="assets/images/ai_workflow.png" alt="AI Workflow Assistant diagram" />
           <div class="project-body">
             <h3>Intelligent Workflow Assistant (AI + Automation)</h3>
@@ -163,6 +168,43 @@
             </div>
           </div>
         </article>
+
+        <!-- NEW PROJECT 4 (Airflow + DuckDB) -->
+        <article class="card project-card" data-category="data-engineering">
+          <img src="assets/images/airflow_duckdb_etl.png" alt="Airflow DuckDB ETL architecture" />
+          <div class="project-body">
+            <h3>Fuzzy Factory ETL Pipeline (Airflow + DuckDB)</h3>
+            <p>
+              Production-style analytics pipeline that transforms raw eCommerce data into a DuckDB warehouse
+              with staging + mart layers. Includes automated data quality tests (pytest) and Dockerized
+              orchestration using Apache Airflow.
+            </p>
+
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">DuckDB</span>
+              <span class="tag">Apache Airflow</span>
+              <span class="tag">Docker</span>
+              <span class="tag">Data Modeling</span>
+              <span class="tag">Testing</span>
+            </div>
+
+            <div class="project-links">
+              <a href="etl-fuzzy-factory.html" class="btn-outline">
+                View Project →
+              </a>
+              <a
+                href="https://github.com/nontobeko1/fuzzy-factory-etl-airflow"
+                target="_blank"
+                rel="noopener"
+                class="btn-outline"
+              >
+                View on GitHub
+              </a>
+            </div>
+          </div>
+        </article>
+
       </div>
     </div>
   </section>
@@ -177,7 +219,11 @@
         <span class="pill">SQL</span>
         <span class="pill">SQL Server</span>
         <span class="pill">ETL</span>
+        <span class="pill">Data Analytics</span>
         <span class="pill">Data Modeling</span>
+        <span class="pill">DuckDB</span>
+        <span class="pill">Airflow</span>
+        <span class="pill">Docker</span>
         <span class="pill">Power BI</span>
         <span class="pill">Git/GitHub</span>
         <span class="pill">APIs</span>
@@ -235,8 +281,36 @@
   </footer>
 
   <script>
+    // year
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // projects filter
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const projectCards = document.querySelectorAll(".project-card");
+
+    function setActive(btn) {
+      filterButtons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+    }
+
+    function applyFilter(filter) {
+      projectCards.forEach(card => {
+        const cat = card.getAttribute("data-category");
+        const show = (filter === "all") || (cat === filter);
+        card.style.display = show ? "" : "none";
+      });
+    }
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const filter = btn.getAttribute("data-filter");
+        setActive(btn);
+        applyFilter(filter);
+      });
+    });
+
+    // default
+    applyFilter("all");
   </script>
 </body>
 </html>
-
