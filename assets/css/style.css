@@ -316,4 +316,130 @@ nav a:hover{opacity:1}
 }
 .icon-square svg{width:26px;height:26px;fill:white}
 
+/* =========================
+   PROJECT FILTER (Premium)
+========================= */
+.projects-filter{
+  margin: 14px 0 22px;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.filter-btn{
+  appearance:none;
+  border:1px solid var(--line);
+  background: rgba(255,255,255,.04);
+  color: var(--text);
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-weight: 800;
+  letter-spacing: .2px;
+  cursor:pointer;
+  transition: transform .15s ease, background .15s ease, border-color .15s ease, box-shadow .15s ease, opacity .15s ease;
+  opacity: .92;
+}
+
+.filter-btn:hover{
+  opacity: 1;
+  transform: translateY(-1px);
+  background: rgba(255,255,255,.06);
+  border-color: rgba(255,255,255,.16);
+  box-shadow: 0 10px 20px rgba(0,0,0,.18);
+}
+
+.filter-btn:active{
+  transform: translateY(0px);
+}
+
+.filter-btn.active{
+  background: linear-gradient(135deg, rgba(47,107,255,.95), rgba(47,155,255,.92));
+  border-color: rgba(255,255,255,.12);
+  color: #ffffff;
+  box-shadow: 0 14px 28px rgba(47,107,255,.22);
+}
+
+/* keyboard focus */
+.filter-btn:focus-visible{
+  outline: 3px solid rgba(47,107,255,.45);
+  outline-offset: 2px;
+}
+
+/* =========================
+   PROJECT CARDS (More polish)
+========================= */
+.project-card{
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+
+.project-card:hover{
+  transform: translateY(-3px);
+  border-color: rgba(255,255,255,.16);
+  box-shadow: 0 18px 40px rgba(0,0,0,.32);
+}
+
+/* Improve project titles readability */
+.project-body h3{
+  margin: 0 0 10px;
+  letter-spacing: -0.2px;
+}
+
+/* =========================
+   PROJECT IMAGE (Better contrast)
+========================= */
+.project-card img{
+  background: linear-gradient(180deg, rgba(0,0,0,.32), rgba(0,0,0,.22));
+  border: 1px solid rgba(255,255,255,.12);
+  padding: 10px;                 /* slightly tighter so screenshots look bigger */
+}
+
+/* If you want Kafka screenshot to feel more "screen-like" */
+.project-card img.kpi-shot,
+.project-card img.kafka-shot{
+  object-fit: cover;             /* looks better for UI screenshots */
+  padding: 0;
+}
+
+/* =========================
+   PROJECT LINKS (Buttons)
+========================= */
+.project-links .btn-outline{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding: 12px 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(47,107,255,.55);
+  background: rgba(47,107,255,.10);
+  color: #ffffff;
+  text-decoration:none;
+  font-weight: 800;
+  transition: transform .15s ease, background .15s ease, border-color .15s ease, box-shadow .15s ease;
+}
+
+.project-links .btn-outline:hover{
+  transform: translateY(-1px);
+  background: rgba(47,107,255,.16);
+  border-color: rgba(47,107,255,.75);
+  box-shadow: 0 12px 24px rgba(47,107,255,.18);
+}
+
+.project-links .btn-outline:active{
+  transform: translateY(0px);
+}
+
+/* Optional: add an arrow to "View Project" links */
+.project-links a.btn-outline::after{
+  content: " ↗";
+  opacity: .9;
+}
+
+/* =========================
+   MOBILE TWEAKS
+========================= */
+@media (max-width: 900px){
+  .filter-btn{ width: auto; }
+  .project-card img{ height: 240px; }
+}
 
